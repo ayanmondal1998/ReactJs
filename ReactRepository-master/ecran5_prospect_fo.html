@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>CIMR, Caisse interprofessionnelle marocaine de retraite, Accueil - CIMR</title>
+      <!--[if IE ]>
+      <link href="ie-fix.css" rel="stylesheet" type="text/css">
+      <![endif]-->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link type="text/css" rel="stylesheet" href="css/bootstrap.min-5.1.3.css" />
+      <link type="text/css" rel="stylesheet" href="css/cimr_styles.css" />
+      <link type="text/css" rel="stylesheet" href="fonts/fonticons/style.css" />
+      <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet'>
+      <link type="text/css" rel="stylesheet" href="css/bootstrap-datepicker.min.css" />
+      <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+      <script type="text/javascript" src="js/bootstrap.bundle.min-5.1.3.js"></script>
+      <script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
+      <script type="text/javascript" src="js/inc.js"></script>
+      <script type="text/javascript" src="js/genericUI.js"></script>
+	   <script type="text/javascript" src="js/signature.js"></script>
+   </head>
+   <!-- Body Container-->
+   <body>
+      <!-- Container Root -->
+      <div class="container-fluid px-0">
+         <!-- wrapper Root -->
+         <div id="wrapper">
+            <!-- Header -->
+            <!-- <header incl_html="header_innerProfile.html"></header> -->
+					<div class="headerBG">
+			    <div class="container">
+				  <div class="row">
+					 <div class="logoImgBase">
+						<a href="#/" title="CIMR" class="logoImgBtn">
+						<img class="logoImg" src="images/logo-cimr.png"/>
+						</a>
+					 </div>
+					 <div class="logoHeaderBase">
+					<span class="headerTitle">WELL PREPARED RETREAT, FUTURE ASSURES!</span>
+					<a href="#/" class="headerHomeBtn"> <span class=" cimr-cimrfi-home-alt"></span> </a>
+					 </div>
+				  </div>
+		        </div>
+		    </div>
+            <!-- Header Ends-->
+            <!-- Inner Content area -->
+            <div class="container">
+               <div class="stepProgressPanel">
+                  <p class="leadTitle pt-3"  align="center">Electronic Signature of the Membership Form</p>
+                  <p class="subTitle "  align="center">&nbsp;</p>
+                  <div class="stepProgressContainer">
+                     <ul class="stepProgressBar mb-3">
+                        <li class="completed">
+                           <span class="datePara">1</span>
+                           <span>Seizure of Membership</span>
+                        </li>
+                        <li class="completed">
+                           <span class="datePara">2</span>
+                           <span>Entering the Retirement Contract </span>
+                        </li>
+                        <li class="completed">
+                           <span class="datePara">3</span>
+                           <span>Signature of the Electronic Signature Convention and submission of the file to the ICRC </span>
+                        </li>
+                        <li class="inProgress">
+                           <span class="datePara">4</span>
+                           <span>Electronic Signature of Contract Documents</span>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="content_panel">
+                  <div class="px-3">
+                     <p class="innerLeadText"> Your membership application has been accepted by the ICMR</p>
+                     <p class=""> Please proceed to the electronic signature of the membership form</p>
+                     <div class="row row-cols-1 row-cols-lg-3 g-4">
+                        <div class="col">
+                           <div class="card customCard">
+                              <div class="card-body">
+                                 <h6 class="card-title">Membership File Reference</h6>
+                                 <a href="#/" class="btn orangeBtn" data-bs-toggle="modal" data-bs-target="#membershipFileReference">Visualization</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <p class="innerLeadText mt-4">Electronic signature of authorized representative or person</p>
+                     <div class="row row-cols-1 row-cols-lg-3 g-4">
+                        <div class="col">
+                           <div class="card customCard h-100">
+                              <div class="card-body">
+                                 <h6 class="card-title">Membership Newsletter</h6>
+                                 <a href="#/" class="btn orangeBtn">Visualization</a>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col electSignMainBase">
+						   <div class="card customCard h-100">
+                              <div class="card-body electSignMainBaseCardBody">
+                                 <a href="#/" > <img src="images/pdf_download.png" class="electSignPDF"></a>
+                                 <form action="submit.php" onsubmit="return onSubmit(this)" method="post" class="customForm">
+                                 <div class="d-none">
+                                    <input name="signatureName" placeholder="Your name" required />
+                                 </div>
+                                 <div>
+                                    <canvas class="customCanvasCard--" id="signatureCanvas" width="280" height="60"></canvas>
+                                    <!-- <canvas class="customCanvasCard" id="signatureCanvas"></canvas> -->
+                                 </div>
+                                 <div>
+                                    <input type="hidden" name="signatureValue" />
+                                 </div>
+								 <div>
+									<button type="button" class="btn orangeBtn" onclick="onClearSignature()">Clear</button>
+									<button type="submit"  class="btn orangeBtn">Electronic Signature</button>
+								  </div>
+                                 </form>
+                              </div>
+							  
+							  <script>
+							    var signatureCanvas = $('signatureCanvas').signature({canvasId:'#signatureCanvas'});
+								//
+							    function onClearSignature() {
+									//signatureCanvas.clear();
+									let canvas = document.querySelector('#signatureCanvas');
+									let context = canvas.getContext('2d');
+									context.clearRect(0, 0, canvas.width, canvas.height);
+								}
+								//
+								function saveCanvasAsImage(canvasId) {
+									let canvas = document.querySelector(canvasId);
+									let link = document.createElement('a');
+									link.download = 'signature.png';
+									link.href = canvas.toDataURL();
+									link.click();
+									link.delete;
+								}
+								//
+								function onSubmitSignature(e) {
+									//saveCanvasAsImage('#signatureCanvas');
+									
+									let canvas = document.querySelector(canvasId);
+									console.log( {
+										'name': document.getElementsByName('signatureName')[0].value,
+										'signature':canvas.toDataURL()
+									} );
+									
+									return false;
+								}
+								
+							  </script>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="card mt-3 OTPEntryPanel">
+                        <div class="card-body">
+                           <div class="form-group row">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col_MB mb-0">
+                                 <div class="row p-1">
+                                    <div class="col-lg-5 col-sm-5">
+                                       <label class="label-txt col-form-label">OTP Entry Received</label>
+                                    </div>
+                                    <div class="col-lg-7 col-sm-7">
+                                       <label class="col-form-label">XXXX</label>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-12 py-4">
+                        <div class="form-group text-center">
+                           <a href="ecran4_prospect_fo.html" class="btn orangeBtn" >Return</a>
+                           <a href="ecran6_prospect_fo.html" class="btn orangeBtn" >Validate</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+			</div>
+            <!-- //Inner Content area -->
+            <!--footer1 start here-->
+            <!-- <footer incl_html="footer_inner.html"></footer> -->
+			<div id="footerInner">
+               <div class="footerInnerSet" align="center">
+                  &copy; Caisse interprofessionnelle marocaine de retraite, Accueil - CIMR
+               </div>
+            </div>
+            <!--//footer1 ends here-->
+         </div>
+         <!-- //wrapper Root -->
+      </div>
+      <!-- //Container Root -->
+      <!-- Membership File Reference Modal -->
+      <!-- The Modal -->
+      <div class="modal fade" id="membershipFileReference">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <!-- Modal Header -->
+               <div class="modal-header">
+                  <h6 class="modal-title">Membership File Reference</h6>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+               </div>
+               <!-- Modal body -->
+               <div class="modal-body">
+                  <div class="table-responsive">
+                     <table class="table table-borderless">
+                        <tbody>
+                           <tr>
+                              <td>Membership Number </td>
+                              <td>AD_2020_036</td>
+                           </tr>
+                           <tr>
+                              <td>Business Name</td>
+                              <td>Nevolys Consulting</td>
+                           </tr>
+                           <tr>
+                              <td>RC No.</td>
+                              <td>237,999</td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+   <!-- //Body Container -->
+</html>

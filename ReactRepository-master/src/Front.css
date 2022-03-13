@@ -1,0 +1,76 @@
+#p0{
+    background-color:#FFFFE0;
+    height: 250px;
+    
+}
+#p1{
+    text-align: left;
+    background-color:	#FFFF33;
+    height: 250px;
+    
+}
+#h0{
+    padding-top: 50px;
+    
+}
+#h1{
+    padding-left: 50px;
+    color: #000;
+}
+#f1{
+    padding-left: 75px;
+    text-decoration: dashed;
+}
+#p2{
+    text-align: left;
+    background-color:aqua;
+    height: 200px;
+    
+}
+#h2{
+    padding-left: 50px;
+}
+#f2{
+    padding-left: 75px;
+}
+.btn {
+    border: none;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 20px;
+    cursor: pointer;
+    display: inline-block;
+    
+    
+  }
+  
+  /* On mouse-over */
+  .btn:hover {background: #eee;}
+  .info{
+      
+      color: dodgerblue;
+  }
+  .success{
+      color: green;
+  }
+  
+  .success:hover{background: green;color:white;}
+  .info:hover{background: dodgerblue;color: white;}
+
+  #p3{
+      background-color:#EEE8AA;
+      padding-top: 30px;
+      padding-bottom: 30px;
+  }
+ label:hover{
+     color: red;
+ }
+ #p5{
+     background-color: orangered;
+     height: 75px;
+     padding-top: 35px;
+ }
+ #p4{
+     background-color: 	#FFFF33;
+ }
+ 
