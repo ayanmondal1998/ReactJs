@@ -4,7 +4,7 @@ import './css/cimr_styles.css';
 import './fonts/fonticons/style.css';
 
 
-function secondPage(){
+function SecondPage(){
     return(
         <div class="container-fluid px-0">
         
@@ -872,4 +872,4 @@ function secondPage(){
     )
 }
 
-export default secondPage
+export default SecondPage

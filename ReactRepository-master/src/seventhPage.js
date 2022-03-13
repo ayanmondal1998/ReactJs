@@ -1,6 +1,6 @@
 import React from "react";
 
-function sixthPage()
+function SeventhPage()
 {
     return(
         <div>
@@ -172,3 +172,5 @@ function sixthPage()
         </div>
     )
 }
+
+export default SeventhPage

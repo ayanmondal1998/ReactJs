@@ -1,6 +1,9 @@
 import React from "react";
+import './css/cimr_styles.css';
 
-function fouthPage()
+import './fonts/fonticons/style.css';
+
+function FourthPage()
 {
     return(
         <div>
@@ -119,3 +122,5 @@ function fouthPage()
         </div>
     )
 }
+
+export default FourthPage

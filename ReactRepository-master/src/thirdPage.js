@@ -1,6 +1,6 @@
 import React from "react";
 
-function thirdPage()
+function ThirdPage()
 {
     return(
         <div>
@@ -416,4 +416,4 @@ function thirdPage()
     )
 }
 
-export default thirdPage
+export default ThirdPage
